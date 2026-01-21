@@ -67,7 +67,7 @@ Follow these steps in order to process data from raw logs to a trained model.
 python scripts/2-3_batch_ingestion.py
 ```
 
-#### 2. Data Validation: Executes Great Expectations suites and generates a DQ_Audit_Report.pdf.
+#### 2. Data Validation: Executes Great Expectations suites and generates a Advanced_DQ_Report_20260121.pdf.
 
 ```code
 python scripts/4_data_validation.py
@@ -113,7 +113,7 @@ python scripts/9_model_training.py
 Run ```dvc dag``` to visualize the pipeline flow.
 
 ### Audit Report: 
-View ```DQ_Audit_Report.pdf``` for comprehensive data quality metrics.
+View ```Advanced_DQ_Report_20260121.pdf``` for comprehensive data quality metrics.
 
 ### MLflow Dashboard: 
 Run the command below to compare model experiments.
