@@ -36,3 +36,74 @@ cd recomart-project
 python -m venv venv
 .\venv\Scripts\activate
 ```
+
+### 2. Install Dependencies
+Install the core libraries for data processing, validation, and machine learning.
+
+```code
+pip install pandas numpy matplotlib seaborn great_expectations fpdf dvc mlflow scikit-learn
+```
+
+### 3. DVC Initialization
+Initialize Data Version Control (DVC) to track your datasets.
+
+```code
+# Initialize DVC
+dvc init
+
+# Link to a local storage 'Vault' (outside the project folder)
+mkdir D:\DMML\Server\Recomart_Data_Vault
+dvc remote add -d myremote D:\DMML\Server\Recomart_Data_Vault
+```
+
+### 🏎️ Execution Guide (The 9-Section Pipeline)
+Follow these steps in order to process data from raw logs to a trained model.
+
+#### Phase 1: Ingestion & Validation
+
+##### 1. Batch Ingestion: Extracts data from API and log sources into the Bronze layer.
+
+```code
+python scripts/2-3_batch_ingestion.py
+```
+
+##### 2. Data Validation: Executes Great Expectations suites and generates a DQ_Audit_Report.pdf.
+
+```code
+python scripts/4_data_validation.py
+```
+
+#### Phase 2: Preparation & Transformation
+
+##### 3. Data Preparation: Performs cleaning and EDA to create the Silver layer.
+
+```code
+python scripts/5_data_preparation.py
+```
+
+##### 4. Feature Engineering: Generates user/item affinity signals for the Gold layer.
+
+```code
+python scripts/6_data_transformation.py
+```
+
+##### 5. Feature Store: Registers metadata for feature versioning and retrieval.
+
+```code
+python scripts/7_feature_store.py
+```
+
+#### Phase 3: Lineage & Training
+
+##### 6. Versioning & Lineage: Uses DVC to reproduce the pipeline and track data hashes.
+
+```code
+dvc repro
+dvc push
+```
+
+##### 7. Model Training: Trains a Content-Based Recommender and tracks metrics via MLflow.
+
+```code
+python scripts/9_model_training.py
+```
