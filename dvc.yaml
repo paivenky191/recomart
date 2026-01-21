@@ -1,0 +1,15 @@
+stages:
+  validate:
+    cmd: .\venv\Scripts\python.exe scripts/4_data_validation.py
+    deps:
+      - scripts/4_data_validation.py
+      - recomart-data-lake/bronze
+    outs:
+      - recomart-data-lake/silver
+  prepare:
+    cmd: .\venv\Scripts\pip.exe scripts/5_data_preparation.py
+    deps:
+      - scripts/5_data_preparation.py
+      - recomart-data-lake/silver
+    outs:
+      - recomart-data-lake/gold
