@@ -1,0 +1,40 @@
+{
+    "feature_views": {
+        "user_signals": {
+            "source": "D:\\DMML\\Recomart\\recomart-data-lake\\feature_store\\user_feature_store.csv",
+            "entity_key": "user_id",
+            "feature_list": [
+                "user_activity_count",
+                "user_avg_affinity",
+                "user_total_score"
+            ],
+            "version": "v1.1",
+            "created_at": "2026-01-21 13:26:50.482990"
+        },
+        "item_signals": {
+            "source": "D:\\DMML\\Recomart\\recomart-data-lake\\feature_store\\item_feature_store.csv",
+            "entity_key": "product_id",
+            "feature_list": [
+                "item_interaction_count",
+                "global_popularity_score",
+                "norm_rating"
+            ],
+            "version": "v1.1",
+            "created_at": "2026-01-21 13:26:50.483652"
+        },
+        "affinity_matrix": {
+            "source": "D:\\DMML\\Recomart\\recomart-data-lake\\feature_store\\user_item_affinity_matrix.csv",
+            "entity_key": "user_id",
+            "feature_list": [
+                "product_id",
+                "affinity_score"
+            ],
+            "version": "v1.0",
+            "created_at": "2026-01-21 13:26:50.484338"
+        }
+    },
+    "metadata": {
+        "project": "Recomart",
+        "last_updated": "2026-01-21 13:26:50.484343"
+    }
+}

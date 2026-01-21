@@ -1,0 +1,6 @@
+2026-01-21 11:07:03,322 - INFO - --- Starting Ingestion: User Interactions ---
+2026-01-21 11:07:03,323 - ERROR - CRITICAL: Source file not found at ../source_data/interactions.csv
+2026-01-21 11:07:03,324 - INFO - --- Starting Ingestion: Product Catalog API ---
+2026-01-21 11:07:04,033 - INFO - Created directory: ./recomart-data-lake/bronze\product_catalog\dt_20260121_110703
+2026-01-21 11:07:04,036 - INFO - SUCCESS: API data converted and saved to ./recomart-data-lake/bronze\product_catalog\dt_20260121_110703\products.csv
+2026-01-21 11:07:04,038 - INFO - Ingestion pipeline run complete.

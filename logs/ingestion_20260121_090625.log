@@ -1,0 +1,7 @@
+2026-01-21 09:06:25,110 - INFO - Created 'source_data' folder. Please place interactions.csv there.
+2026-01-21 09:06:25,111 - INFO - --- Starting Ingestion: User Interactions ---
+2026-01-21 09:06:25,112 - ERROR - CRITICAL: Source file not found at source_data/interactions.csv
+2026-01-21 09:06:25,112 - INFO - --- Starting Ingestion: Product Catalog API ---
+2026-01-21 09:06:25,673 - INFO - Created directory: ./recomart-data-lake/bronze\product_catalog\batch_20260121_090625
+2026-01-21 09:06:25,700 - INFO - SUCCESS: API data converted and saved to ./recomart-data-lake/bronze\product_catalog\batch_20260121_090625\products.csv
+2026-01-21 09:06:25,702 - INFO - Ingestion pipeline run complete.

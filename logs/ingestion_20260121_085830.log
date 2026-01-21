@@ -1,0 +1,12 @@
+2026-01-21 08:58:30,960 - INFO - --- Starting Ingestion: User Interactions ---
+2026-01-21 08:58:31,027 - INFO - Created directory: ./recomart-data-lake/bronze\user_interactions\batch_20260121_085830
+2026-01-21 08:58:31,029 - ERROR - FAILED: Unexpected error during CSV ingestion: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2026-01-21 08:58:31,032 - INFO - --- Starting Ingestion: Product Catalog API ---
+2026-01-21 08:58:41,196 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='fakestoreapi.com', port=443): Read timed out. (read timeout=10)")': /products
+2026-01-21 08:58:41,653 - INFO - Created directory: ./recomart-data-lake/bronze\product_catalog\batch_20260121_085830
+2026-01-21 08:58:41,658 - INFO - SUCCESS: API data saved to ./recomart-data-lake/bronze\product_catalog\batch_20260121_085830\products.json
+2026-01-21 08:58:41,659 - INFO - Ingestion pipeline run complete.
