@@ -73,7 +73,7 @@ def run_eda(df_inter, df_prod):
     """
     Generates summary plots for interaction distributions and item popularity.
     """
-    print("📊 Generating Exploratory Analysis Plots...")
+    print("Generating Exploratory Analysis Plots...")
     
     # Plot 1: Item Popularity (The Long Tail)
     plt.figure(figsize=(10, 5))
@@ -108,7 +108,7 @@ def calculate_global_sparsity(df):
     sparsity = (1 - (actual_interactions / total_matrix_cells)) * 100
     
     print("-" * 40)
-    print("📈 GLOBAL DATASET METRICS")
+    print("GLOBAL DATASET METRICS")
     print("-" * 40)
     print(f"Total Unique Users:    {n_users}")
     print(f"Total Unique Products: {n_items}")
@@ -119,7 +119,7 @@ def calculate_global_sparsity(df):
 # --- 5. MAIN EXECUTION PIPELINE ---
 
 def run_data_preparation():
-    print("🚀 Initializing Section 5: Data Preparation...")
+    print("Initializing Section 5: Data Preparation...")
 
     try:
         # Step 1: Load Latest Silver Data
@@ -150,12 +150,12 @@ def run_data_preparation():
         gold_output_path = os.path.join(GOLD_BASE, "recomart_gold_prepared.csv")
         gold_df.to_csv(gold_output_path, index=False)
         
-        print(f"\n✅ Pipeline Successful!")
-        print(f"💎 Gold Dataset Saved: {gold_output_path}")
-        print(f"📊 EDA Assets Created in: ./{EDA_DIR}/")
+        print(f"\n Pipeline Successful!")
+        print(f" Gold Dataset Saved: {gold_output_path}")
+        print(f" EDA Assets Created in: ./{EDA_DIR}/")
 
     except Exception as e:
-        print(f"❌ Execution Error: {e}")
+        print(f" Execution Error: {e}")
 
 if __name__ == "__main__":
     run_data_preparation()

@@ -7,7 +7,7 @@ stages:
     outs:
       - recomart-data-lake/silver
   prepare:
-    cmd: .\venv\Scripts\pip.exe scripts/5_data_preparation.py
+    cmd: .\venv\Scripts\python.exe scripts/5_data_preparation.py
     deps:
       - scripts/5_data_preparation.py
       - recomart-data-lake/silver

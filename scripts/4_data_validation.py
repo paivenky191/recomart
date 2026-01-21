@@ -132,7 +132,7 @@ def run_advanced_validation():
 
         # 6. Promotion & Report
         if res_inter.success and res_prod.success:
-            print("🚀 Quality Checks Passed. Promoting to Silver Layer...")
+            print("Quality Checks Passed. Promoting to Silver Layer...")
             # Interaction Silver Export
             path_i = os.path.join(SILVER_BASE, "user_interactions", inter_batch)
             os.makedirs(path_i, exist_ok=True)
@@ -143,7 +143,7 @@ def run_advanced_validation():
             os.makedirs(path_p, exist_ok=True)
             df_prod.drop(columns=['val_rate']).to_csv(os.path.join(path_p, "product_catalog_silver.csv"), index=False)
         else:
-            print("⚠️ Validation Failed. Silver files were not updated.")
+            print("Validation Failed. Silver files were not updated.")
 
         # 7. Generate Enhanced PDF Report
         pdf = RecomartAuditReport()
@@ -154,10 +154,10 @@ def run_advanced_validation():
         
         report_name = f"Advanced_DQ_Report_{datetime.datetime.now().strftime('%Y%m%d')}.pdf"
         pdf.output(report_name)
-        print(f"✅ Audit Complete. PDF Saved as: {report_name}")
+        print(f"Audit Complete. PDF Saved as: {report_name}")
 
     except Exception as e:
-        print(f"❌ Pipeline Error: {e}")
+        print(f"Pipeline Error: {e}")
 
 if __name__ == "__main__":
     run_advanced_validation()

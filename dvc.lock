@@ -1,0 +1,38 @@
+schema: '2.0'
+stages:
+  validate:
+    cmd: .\venv\Scripts\python.exe scripts/4_data_validation.py
+    deps:
+    - path: recomart-data-lake/bronze
+      hash: md5
+      md5: 692336fb9fd73bdbca2ceb32d953339a.dir
+      size: 4328973
+      nfiles: 12
+    - path: scripts/4_data_validation.py
+      hash: md5
+      md5: d79f71a764e0e810fc572a333dc30587
+      size: 7956
+    outs:
+    - path: recomart-data-lake/silver
+      hash: md5
+      md5: 5815ace07e0fa06cfcb501126efb81f6.dir
+      size: 721581
+      nfiles: 2
+  prepare:
+    cmd: .\venv\Scripts\python.exe scripts/5_data_preparation.py
+    deps:
+    - path: recomart-data-lake/silver
+      hash: md5
+      md5: 5815ace07e0fa06cfcb501126efb81f6.dir
+      size: 721581
+      nfiles: 2
+    - path: scripts/5_data_preparation.py
+      hash: md5
+      md5: 73498b6784f4173d0238350c12e13903
+      size: 5863
+    outs:
+    - path: recomart-data-lake/gold
+      hash: md5
+      md5: bf523d106122e40db25f4ba8839eb52c.dir
+      size: 1224132
+      nfiles: 1

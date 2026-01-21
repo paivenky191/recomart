@@ -1,0 +1,7 @@
+2026-01-21 15:31:22,157 - INFO - --- Starting Ingestion: User Interactions ---
+2026-01-21 15:31:22,231 - INFO - Created directory: ./recomart-data-lake/bronze\user_interactions\dt_20260121_153122
+2026-01-21 15:31:22,282 - INFO - SUCCESS: Ingested 10000 rows to ./recomart-data-lake/bronze\user_interactions\dt_20260121_153122\interactions.csv
+2026-01-21 15:31:22,283 - INFO - --- Starting Ingestion: Product Catalog API ---
+2026-01-21 15:31:22,795 - INFO - Created directory: ./recomart-data-lake/bronze\product_catalog\dt_20260121_153122
+2026-01-21 15:31:22,801 - INFO - SUCCESS: API data converted and saved to ./recomart-data-lake/bronze\product_catalog\dt_20260121_153122\products.csv
+2026-01-21 15:31:22,804 - INFO - Ingestion pipeline run complete.

@@ -31,7 +31,7 @@ class RecomartFeatureStore:
         full_source_path = os.path.abspath(os.path.join(self.base_path, source_filename))
         
         if not os.path.exists(full_source_path):
-            print(f"❌ Error: File not found: {full_source_path}")
+            print(f"Error: File not found: {full_source_path}")
             return
 
         self.registry["feature_views"][name] = {
@@ -45,7 +45,7 @@ class RecomartFeatureStore:
         
         with open(self.registry_path, 'w') as f:
             json.dump(self.registry, f, indent=4)
-        print(f"📝 Feature View '{name}' ({version}) successfully registered.")
+        print(f"Feature View '{name}' ({version}) successfully registered.")
 
     def get_historical_features(self, view_name):
         """Retrieves the full dataset for batch model training."""
@@ -74,7 +74,7 @@ class RecomartFeatureStore:
 # 2. REGISTRATION & RETRIEVAL DEMO
 # ==========================================
 def run_feature_store_pipeline():
-    print("🚀 Initializing Recomart Feature Store Pipeline...")
+    print("Initializing Recomart Feature Store Pipeline...")
     fs = RecomartFeatureStore()
 
     # --- 1. Register User Features (Activity/Frequency) ---
@@ -105,7 +105,7 @@ def run_feature_store_pipeline():
     )
 
     print("\n" + "="*50)
-    print("📊 SAMPLE FEATURE RETRIEVAL DEMONSTRATION")
+    print("SAMPLE FEATURE RETRIEVAL DEMONSTRATION")
     print("="*50)
     
     try:
@@ -113,7 +113,7 @@ def run_feature_store_pipeline():
         # ------------------------------------
         # The model asks for the affinity matrix view to begin training
         train_df = fs.get_historical_features("affinity_matrix")
-        print(f"✅ Training Set (Affinity Matrix) retrieved: {len(train_df)} rows.")
+        print(f"Training Set (Affinity Matrix) retrieved: {len(train_df)} rows.")
 
         # B. Real-time Inference Retrieval (Online Simulation)
         # ------------------------------------
@@ -122,15 +122,15 @@ def run_feature_store_pipeline():
         online_profile = fs.get_online_feature("user_signals", sample_user_id)
         
         if online_profile is not None:
-            print(f"✅ Online Feature Retrieval for User '{sample_user_id}':")
+            print(f"Online Feature Retrieval for User '{sample_user_id}':")
             # Displaying the specific columns model needs for inference
             print(online_profile.to_string(index=False))
         else:
-            print(f"❓ User '{sample_user_id}' profile not found.")
+            print(f"User '{sample_user_id}' profile not found.")
 
     except Exception as e:
-        print(f"⚠️ Error during retrieval: {e}")
-        print("💡 Ensure Section 6 was run successfully and column names match.")
+        print(f"Error during retrieval: {e}")
+        print("Ensure Section 6 was run successfully and column names match.")
     
     print("="*50)
 

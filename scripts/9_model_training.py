@@ -13,7 +13,7 @@ def run_content_based_recommender():
     mlflow.set_experiment("Recomart_Content_Based_RecSys")
     
     with mlflow.start_run(run_name=f"TFIDF_Similarity_{datetime.datetime.now().strftime('%Y%m%d')}"):
-        print("📥 Loading Item Features...")
+        print("Loading Item Features...")
         df_items = pd.read_csv(ITEM_FEAT_PATH)
 
         # --- 2. TEXT VECTORIZATION ---
@@ -22,7 +22,7 @@ def run_content_based_recommender():
         tfidf = TfidfVectorizer(stop_words='english')
         tfidf_matrix = tfidf.fit_transform(df_items['category'].fillna('None'))
         
-        print(f"⚙️ Item Feature Matrix Shape: {tfidf_matrix.shape}")
+        print(f"Item Feature Matrix Shape: {tfidf_matrix.shape}")
 
         # --- 3. SIMILARITY CALCULATION ---
         # Linear kernel is faster than cosine_similarity for TF-IDF matrices
@@ -54,11 +54,11 @@ def run_content_based_recommender():
         sample_id = df_items['product_id'].iloc[0]
         recs = get_recommendations(sample_id)
         
-        print(f"\n✅ Content-Based Recommendations for Product ID {sample_id}:")
+        print(f"\nContent-Based Recommendations for Product ID {sample_id}:")
         print(recs)
         
         mlflow.set_tag("model_type", "Content-Based")
-        print(f"\n📑 Experiment tracked in MLflow. Run ID: {mlflow.active_run().info.run_id}")
+        print(f"\nExperiment tracked in MLflow. Run ID: {mlflow.active_run().info.run_id}")
 
 if __name__ == "__main__":
     run_content_based_recommender()
