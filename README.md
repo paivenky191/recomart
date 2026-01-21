@@ -1,10 +1,10 @@
-# 🚀 Recomart Recommendation Engine
+# Recomart Recommendation Engine
 
 Welcome to the **Recomart** project. This repository implements a full **Medallion Architecture** (Bronze → Silver → Gold) to transform raw e-commerce logs into a production-ready recommendation system.
 
 
 
-## 📁 Repository Structure
+## Repository Structure
 ```text
 recomart-project/
 ├── .dvc/                       # DVC internal configuration
@@ -22,4 +22,17 @@ recomart-project/
 ├── dvc.yaml                    # Section 8: Data Lineage Map
 ├── metadata_registry.json      # Feature Store Metadata
 └── mlruns/                     # MLflow experiment tracking
+```
+## 🛠️ Setup & Installation
+### 1. Clone & Environment
+Clone the repository and set up a Python virtual environment to manage dependencies
 
+```code
+# Clone the repository
+git clone <your-repo-url>
+cd recomart-project
+
+# Setup Virtual Environment
+python -m venv venv
+.\venv\Scripts\activate
+```
