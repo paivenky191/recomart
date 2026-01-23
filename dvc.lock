@@ -5,9 +5,9 @@ stages:
     deps:
     - path: recomart-data-lake/bronze
       hash: md5
-      md5: 692336fb9fd73bdbca2ceb32d953339a.dir
-      size: 4328973
-      nfiles: 12
+      md5: 5e6dabaf3ef8bf3b42786b57c1378a57.dir
+      size: 721581
+      nfiles: 2
     - path: scripts/4_data_validation.py
       hash: md5
       md5: d79f71a764e0e810fc572a333dc30587
@@ -15,7 +15,7 @@ stages:
     outs:
     - path: recomart-data-lake/silver
       hash: md5
-      md5: 5815ace07e0fa06cfcb501126efb81f6.dir
+      md5: 136026b6b8f43a17523d583b7da4ba75.dir
       size: 721581
       nfiles: 2
   prepare:
@@ -23,7 +23,7 @@ stages:
     deps:
     - path: recomart-data-lake/silver
       hash: md5
-      md5: 5815ace07e0fa06cfcb501126efb81f6.dir
+      md5: 136026b6b8f43a17523d583b7da4ba75.dir
       size: 721581
       nfiles: 2
     - path: scripts/5_data_preparation.py
