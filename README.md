@@ -121,3 +121,10 @@ Run the command below to compare model experiments.
 ```code
 mlflow ui
 ```
+
+### Dagster 
+Run the command below to open dagster
+
+```code
+dagster dev -f scripts/10_orchestration.py
+```
