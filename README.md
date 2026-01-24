@@ -126,5 +126,5 @@ mlflow ui
 Run the command below to open dagster
 
 ```code
-dagster dev -f scripts/10_orchestration.py
+dagster dev -f scripts/10_orchestration.py 
 ```

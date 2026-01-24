@@ -51,7 +51,7 @@ def run_content_based_recommender():
             return df_items.iloc[item_indices][['product_id', 'category', 'norm_rating']]
 
         # --- 5. EVALUATION (Sample) ---
-        sample_id = df_items['product_id'].iloc[0]
+        sample_id = df_items['product_id'].iloc[2]
         recs = get_recommendations(sample_id)
         
         print(f"\nContent-Based Recommendations for Product ID {sample_id}:")
